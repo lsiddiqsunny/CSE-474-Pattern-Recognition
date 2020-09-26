@@ -86,13 +86,13 @@ def basic_parceptron(train_x,train_y):
                 false = false+1
                 for j in range(features):
                     if current_pred[i] == 1:
-                        w[j] = w[j]+learning_rate*-1*train_x[i][j]
+                        w[j] = w[j]-learning_rate*1*train_x[i][j]
                     else:
-                        w[j] = w[j]+learning_rate*1*train_x[i][j]
+                        w[j] = w[j]-learning_rate*-1*train_x[i][j]
                 if current_pred[i] == 1:
-                    bias[0] = bias[0]+learning_rate*-1*1
+                    bias[0] = bias[0]-learning_rate*1*1
                 else:
-                    bias[0] = bias[0]+learning_rate*1*1
+                    bias[0] = bias[0]-learning_rate*-1*1
         #loss_rate.append((false/samples)*100)
         #print(false)
         if false == 0:
